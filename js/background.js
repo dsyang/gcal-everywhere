@@ -55,20 +55,9 @@ Requests.prototype.normalAdd = function (info, callback) {
     oauth.sendSignedRequest(url, callback, request);
 };
 
-Requests.prototype.getCalendars = function(callback) {
-    var url = "https://www.google.com/calendar/feeds/default/owncalendars/full"
-    var request = {
-        'method': 'GET',
-        'headers': {
-            'GData-Version': '2.0',
-            'Content-Type': 'application/json'
-        },
-        'parameters': {'alt': 'jsonc'},
-    };
-    oauth.sendSignedRequest(url, callback, request);
-};
 
 function onClickHandler(info, tab) {
+    var text;
     if(info.selectionText !== "") {
         var callback = function (response, xhr) {
             var result = JSON.parse(response);
@@ -77,7 +66,13 @@ function onClickHandler(info, tab) {
                 "url": result.data.alternateLink
             });
         };
-        requests.quickAdd(info.selectionText, callback);
+
+        if(localStorage['confirm'] === "true") {
+            text = prompt("Do you want to refine your event before adding it?",
+                          info.selectionText);
+        }
+
+        requests.quickAdd(text, callback);
     }
 
 };
@@ -103,12 +98,10 @@ chrome.runtime.onInstalled.addListener(function() {
     var id = chrome.contextMenus.create({"title": "QuickAdd to google calendar",
                                          "contexts": contexts,
                                          "id": "selection context"});
-    localStorage["editSelection"] = true;
+    localStorage["reminder"] = true;
+    localStorage["confirm"] = true;
 
     requests = new Requests();
-    requests.getCalendars( function (response, xhr) {
-        console.log(JSON.parse(response));
-    });
 
 
 });
