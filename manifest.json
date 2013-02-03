@@ -3,20 +3,23 @@
     "name": "Gcal-Everywhere",
     "version": "0.1",
     "icons" : {
-        "16": "icon-small.png"
+        "16": "img/icon-small.png"
     },
     "description": "Uses OAuth to connect to Google's calendar and do quickadd",
     "background" : {
         "scripts" : [
-            "chrome_ex_oauthsimple.js",
-            "chrome_ex_oauth.js",
-            "background.js"
+            "oauth/chrome_ex_oauthsimple.js",
+            "oauth/chrome_ex_oauth.js",
+            "js/background.js"
         ]
     },
 
+    "options_page" : "options.html",
+
     "browser_action": {
         "default_title": "",
-        "default_icon": "icon-small.png"
+        "default_icon": "img/icon-small.png",
+        "default_popup": "popup.html"
     },
     "permissions" : [
         "tabs",
