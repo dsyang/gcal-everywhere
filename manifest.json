@@ -5,7 +5,7 @@
     "icons" : {
         "16": "img/icon-small.png"
     },
-    "description": "Uses OAuth to connect to Google's calendar and do quickadd",
+    "description": "Add events to google calendar with ease.",
     "background" : {
         "scripts" : [
             "oauth/chrome_ex_oauthsimple.js",

@@ -95,7 +95,7 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 chrome.runtime.onInstalled.addListener(function() {
 
     var contexts = ["selection"];
-    var id = chrome.contextMenus.create({"title": "QuickAdd to google calendar",
+    var id = chrome.contextMenus.create({"title": "Add to google calendar",
                                          "contexts": contexts,
                                          "id": "selection context"});
     localStorage["reminder"] = true;

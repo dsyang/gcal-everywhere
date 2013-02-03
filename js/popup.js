@@ -1,7 +1,6 @@
-console.log(window.getSelection());
-if(window.getSelection() !== "") {
-    $('#addText').val(window.getSelection());
-}
+$('#options').click(function () {
+    chrome.tabs.create({ "url": "options.html"});
+});
 
 $('#save').click(function() {
     var what = $('#what').val();

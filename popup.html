@@ -5,31 +5,42 @@
     <script type="text/javascript" src="js/jquery-1.9.0.js"></script>
     <script type="text/javascript" src="js/jquery.timepicker.js"></script>
     <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+		<script type="text/javascript" src="js/datepair.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery.timepicker.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
 
   </head>
   <body>
-    <div id="settings"><a id="options" href="#">Options</a></div>
+    <h3> Add event: </h3>
+    <div id="input">
+      <p>
+        <label name="what">Name</label>
+        <input id="what" name="what" type="text" size="30"/>
+      </p>
+      <p>
+        <label name="where">Location</label>
+        <input id="where" name="where" type="text" size="30"/>
+      </p>
 
-    <h2> Add event: </h2>
-    <div id="input" style="width: 300px; height: 300px;">
-      <label name="what">What</label>
-      <input id="what" name="what" type="text" size="30"/>
-      <label name="where">Where</label>
-      <input id="where" name="where" type="text" size="30"/>
-
-		  <script src="js/datepair.js"></script>
-		  <h3>Datepair Example</h3>
 
 		  <p class="datepair" data-language="javascript">
-			  <input type="text" class="date start" />
-			  <input type="text" class="time start" /> to
-			  <input type="text" class="time end" />
-        <input type="text" class="date end" />
+        <label name="startDate"> Start Date: </label>
+			  <input name="startDate" type="text" class="date start" />
+        <br />
+        <label name="startTime"> Start Time: </label>
+			  <input name="startTime" type="text" class="time start" />
+        <br />
+        <br />
+        <label name="endDate"> End Date: </label>
+			  <input name="endDate" type="text" class="date end" />
+        <br />
+        <label name="endTime"> End Time: </label>
+			  <input name="endTime" type="text" class="time end" />
 		  </p>
 
       <button id="save">Create</button>
+      <a id="options" href="#">Options</a>
     </div>
 
     <script type="text/javascript" src="js/popup.js"></script>
