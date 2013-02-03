@@ -57,7 +57,7 @@ Requests.prototype.normalAdd = function (info, callback) {
 
 
 function onClickHandler(info, tab) {
-    var text;
+    var text = info.selectionText;
     if(info.selectionText !== "") {
         var callback = function (response, xhr) {
             var result = JSON.parse(response);
@@ -70,9 +70,10 @@ function onClickHandler(info, tab) {
         if(localStorage['confirm'] === "true") {
             text = prompt("Do you want to refine your event before adding it?",
                           info.selectionText);
+            console.log(text);
         }
-
-        requests.quickAdd(text, callback);
+        if(text !== null)
+            requests.quickAdd(text, callback);
     }
 
 };

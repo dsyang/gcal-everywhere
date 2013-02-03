@@ -9,10 +9,11 @@ body {
     height: 100%;
 }
 
-#options {
+#options_link {
     position: absolute;
     right: 10px;
 }
+
 #input input[type="text"] {
     width: 65%;
 }
@@ -21,4 +22,8 @@ body {
     width: 80px;
     display: block;
     float: left;
+}
+
+#options #status {
+    color: #468847;
 }
