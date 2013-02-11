@@ -1,4 +1,4 @@
-$('#options').click(function () {
+$('#options_link').click(function () {
     chrome.tabs.create({ "url": "options.html"});
 });
 

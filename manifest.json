@@ -1,7 +1,7 @@
 {
     "manifest_version" : 2,
     "name": "Gcal-Everywhere",
-    "version": "0.5",
+    "version": "0.7",
     "icons" : {
         "16": "img/icon-small.png",
         "128": "img/icon-big.png"

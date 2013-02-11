@@ -1,6 +1,6 @@
 $(document).ready(function() {
 //    if(localStorage["reminder"]) $('#reminder').prop('checked', true);
-    if(localStorage["confirm"]) $('#confirm').prop('checked', true);
+    if(localStorage["confirm"] === "true") $('#confirm').prop('checked', true);
 
     $('#save_button').click(function() {
 //        localStorage["reminder"] = $('#reminder').is(':checked');

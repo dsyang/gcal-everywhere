@@ -93,6 +93,15 @@ function doAdd(info) {
 
 chrome.contextMenus.onClicked.addListener(onClickHandler);
 
+chrome.runtime.onStartup.addListener( function () {
+    var contexts = ["selection"];
+    var id = chrome.contextMenus.create({"title": "Add to google calendar",
+                                         "contexts": contexts,
+                                         "id": "selection context"});
+    requests = new Requests();
+
+});
+
 chrome.runtime.onInstalled.addListener(function() {
 
     var contexts = ["selection"];
@@ -100,7 +109,7 @@ chrome.runtime.onInstalled.addListener(function() {
                                          "contexts": contexts,
                                          "id": "selection context"});
     localStorage["reminder"] = true;
-    localStorage["confirm"] = true;
+    localStorage["confirm"] = false;
 
     requests = new Requests();
 
